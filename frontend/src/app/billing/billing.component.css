@@ -1,0 +1,514 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  color: #4CAF50;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+h3 {
+  color: #555;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.content {
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Payment Methods Section */
+.payment-methods {
+  margin-bottom: 30px;
+}
+
+.no-cards {
+  text-align: center;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px dashed #ccc;
+}
+
+.no-cards p {
+  color: #666;
+  margin-bottom: 0;
+}
+
+.add-card-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+  max-width: 250px;
+  text-align: center;
+}
+
+.add-card-button:hover {
+  background-color: #45a049;
+}
+
+/* Saved Cards */
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.card-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-info {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.card-type {
+  margin-right: 15px;
+}
+
+.card-icon {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: white;
+}
+
+.card-icon.visa {
+  background-color: #1a1f71;
+}
+
+.card-icon.mastercard {
+  background-color: #eb001b;
+}
+
+.card-icon.american {
+  background-color: #006fcf;
+}
+
+.card-icon.discover {
+  background-color: #ff6600;
+}
+
+.card-icon.diners {
+  background-color: #0079be;
+}
+
+.card-icon.jcb {
+  background-color: #0b4ea2;
+}
+
+.card-icon.unionpay {
+  background-color: #e21836;
+}
+
+.card-icon.card {
+  background-color: #6c757d;
+}
+
+.card-details {
+  flex: 1;
+}
+
+.card-number {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.card-expiry, .card-name {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 3px;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: #f8f9fa;
+  color: #495057;
+  border: 1px solid #ced4da;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.action-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.action-button:active {
+  transform: translateY(0);
+}
+
+.action-button svg {
+  transition: all 0.2s ease;
+}
+
+.edit-button {
+  color: #2c3e50;
+  border-color: #dae0e5;
+}
+
+.edit-button:hover {
+  background-color: #e9ecef;
+  border-color: #cbd3da;
+}
+
+.edit-button svg {
+  color: #3498db;
+}
+
+.delete-button {
+  color: #721c24;
+  border-color: #f5c6cb;
+}
+
+.delete-button:hover {
+  background-color: #f8d7da;
+  border-color: #f1b0b7;
+}
+
+.delete-button svg {
+  color: #dc3545;
+}
+
+/* Add Card Form */
+.add-card-form, .edit-card-form {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Card Type Indicator */
+.card-type-indicator {
+  position: absolute;
+  top: 35px;
+  right: 10px;
+  background-color: white;
+  border-radius: 4px;
+  padding: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-type-indicator .card-icon {
+  font-size: 0.7rem;
+  padding: 3px 6px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.form-group.expiry {
+  flex: 1;
+}
+
+.form-group.cvv {
+  flex: 0.7;
+}
+
+.form-group.city {
+  flex: 2;
+}
+
+.form-group.state {
+  flex: 1;
+}
+
+.form-group.zip {
+  flex: 1;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.25);
+}
+
+.expiry-inputs {
+  display: flex;
+  align-items: center;
+}
+
+.expiry-inputs select {
+  flex: 1;
+}
+
+.expiry-separator {
+  margin: 0 5px;
+  color: #666;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.cancel-button {
+  background-color: #f8f9fa;
+  color: #495057;
+  border: 1px solid #ced4da;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.cancel-button:hover {
+  background-color: #e9ecef;
+}
+
+.save-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.save-button:hover {
+  background-color: #45a049;
+}
+
+.save-button:disabled {
+  background-color: #a5d6a7;
+  cursor: not-allowed;
+}
+
+/* Back Button */
+.back-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: block;
+  margin: 0 auto;
+}
+
+.back-button:hover {
+  background-color: #45a049;
+}
+
+.card-logo {
+  width: 60px;
+  height: auto;
+  border-radius: 4px;
+  object-fit: contain;
+  margin-top: -10px;
+}
+
+.card-logo-small {
+  width: 40px;
+  height: auto;
+  object-fit: contain;
+  margin-top: -10px;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-container {
+  background-color: white;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  animation: slideIn 0.3s ease-out;
+  transform-origin: center;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  padding: 18px 24px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.modal-body {
+  padding: 30px 24px;
+  text-align: center;
+}
+
+.warning-icon {
+  margin-bottom: 20px;
+}
+
+.warning-icon svg {
+  color: #f39c12;
+}
+
+.modal-body p {
+  margin: 0 0 15px;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.modal-note {
+  font-size: 14px;
+  color: #6c757d;
+  background-color: #f8f9fa;
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 3px solid #f39c12;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.modal-footer {
+  padding: 16px 24px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.modal-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-button.secondary {
+  background-color: #f8f9fa;
+  color: #495057;
+  border: 1px solid #ced4da;
+}
+
+.modal-button.secondary:hover {
+  background-color: #e9ecef;
+}
+
+.modal-button.primary {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.modal-button.primary:hover {
+  background-color: #45a049;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

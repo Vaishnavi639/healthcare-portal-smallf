@@ -1,0 +1,55 @@
+<div class="insurance-container">
+  <h1>Insurance Information</h1>
+  
+  <div class="success-message" *ngIf="submitSuccess">
+    <p>Your insurance information has been saved successfully! Redirecting to home page...</p>
+  </div>
+  
+  <div class="error-message-container" *ngIf="submitError">
+    <p>{{ submitError }}</p>
+  </div>
+  
+  <form [formGroup]="insuranceForm" (ngSubmit)="onSubmit()" *ngIf="!submitSuccess">
+    <div class="form-group">
+      <label for="insuranceCompany">Insurance Company:</label>
+      <input
+        type="text"
+        id="insuranceCompany"
+        formControlName="insuranceCompany"
+        required
+      />
+      <div class="validation-error" *ngIf="insuranceForm.get('insuranceCompany')?.invalid && insuranceForm.get('insuranceCompany')?.touched">
+        Please enter your insurance company
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="insuranceId">Insurance ID:</label>
+      <input
+        type="text"
+        id="insuranceId"
+        formControlName="insuranceId"
+        required
+      />
+      <div class="validation-error" *ngIf="insuranceForm.get('insuranceId')?.invalid && insuranceForm.get('insuranceId')?.touched">
+        Please enter your insurance ID
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="groupNumber">Group Number:</label>
+      <input
+        type="text"
+        id="groupNumber"
+        formControlName="groupNumber"
+        required
+      />
+      <div class="validation-error" *ngIf="insuranceForm.get('groupNumber')?.invalid && insuranceForm.get('groupNumber')?.touched">
+        Please enter your group number
+      </div>
+    </div>
+    <button type="submit" [disabled]="!insuranceForm.valid || isSubmitting">
+      <span *ngIf="isSubmitting">Saving...</span>
+      <span *ngIf="!isSubmitting">{{ isEditing ? 'Update Information' : 'Submit' }}</span>
+    </button>
+    <button type="button" class="back-button" (click)="goBack()">Back</button>
+  </form>
+</div>
